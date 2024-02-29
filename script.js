@@ -26,3 +26,14 @@ fetch("https://dummyjson.com/products")
     })
 
     .catch((error) => console.error("Something wrong mate", error));
+    
+    fetch('https://dummyjson.com/products/add', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    title: 'Jaguar Keyholder',
+    /* other product data */
+  })
+})
+.then(res => res.json())
+.then(console.log);
